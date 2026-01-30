@@ -1,4 +1,4 @@
-/* ===== BASIC RESET ===== */
+/* ===== RESET ===== */
 *{
   box-sizing:border-box;
 }
@@ -15,11 +15,11 @@ header{
   text-align:center;
   padding:14px;
   font-size:22px;
-  font-weight:900;   /* extra bold logo */
+  font-weight:900;
   letter-spacing:1px;
 }
 
-/* ===== GRID (MAIN + RELATED) ===== */
+/* ===== GRID (HOME + RELATED) ===== */
 .grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -37,23 +37,23 @@ header{
   box-shadow:0 2px 5px rgba(0,0,0,0.15);
 }
 
-/* ===== POSTER IMAGE (NO CROP, 4:3 FIXED) ===== */
+/* ===== POSTER IMAGE (4:3 NO CROP) ===== */
 .card img,
 .post img{
   width:100%;
-  aspect-ratio:4/3;     /* SAME FRAME FOR ALL */
-  object-fit:contain;   /* 🔥 NO CROP */
-  background:#000;      /* side black if needed */
+  aspect-ratio:4/3;
+  object-fit:contain;   /* 🔥 no crop */
+  background:#000;
   display:block;
 }
 
 /* ===== CARD TITLE ===== */
 .card span{
   display:block;
-  padding:6px;
-  font-size:13px;
+  padding:8px;
+  font-size:14px;
+  font-weight:800;      /* extra bold */
   text-align:center;
-  font-weight:600;
 }
 
 /* ===== DETAILS PAGE ===== */
@@ -65,20 +65,39 @@ header{
 }
 
 .post h2{
-  font-size:18px;
-  margin:8px 0;
+  font-size:20px;
+  font-weight:900;
+  margin:10px 0;
+  text-align:center;
+}
+
+/* ===== INFO / UNDERLINE BOX ===== */
+.info-box{
+  text-align:center;
+  font-weight:900;
+  font-size:15px;
+  padding:8px;
+  margin-top:12px;
+  border-bottom:2px solid #000;
+}
+
+.subinfo{
+  text-align:center;
+  font-size:13px;
+  font-weight:700;
+  margin:6px 0 10px;
 }
 
 /* ===== BUTTONS ===== */
 .btn{
   display:block;
-  margin:8px 0;
+  margin:10px 0;
   padding:12px;
   text-align:center;
   color:#fff;
   text-decoration:none;
   border-radius:25px;
-  font-weight:700;
+  font-weight:800;
   font-size:14px;
 }
 
@@ -94,12 +113,25 @@ header{
 .tgtext{
   text-align:center;
   font-size:13px;
+  font-weight:700;
   color:#555;
   margin-bottom:10px;
 }
 
-/* ===== SECTION TITLE ===== */
+/* ===== HOW TO WATCH VIDEO ===== */
+.video-box{
+  margin:10px 0;
+}
+
+.video-box iframe{
+  width:100%;
+  height:220px;
+  border-radius:6px;
+}
+
+/* ===== SECTION TITLES ===== */
 h3{
-  margin:10px;
+  margin:12px 10px 6px;
   font-size:16px;
+  font-weight:800;
 }
