@@ -1,0 +1,41 @@
+body{
+  margin:0;
+  font-family:Arial;
+  background:#fff;
+  text-align:center;
+}
+
+.title{
+  padding:10px;
+  font-weight:bold;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  padding:10px;
+}
+
+.grid img{
+  width:100%;
+  border-radius:6px;
+}
+
+.poster{
+  width:95%;
+  margin-top:10px;
+}
+
+.btn{
+  display:block;
+  margin:10px auto;
+  width:90%;
+  padding:12px;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+}
+
+.play{background:#000;}
+.tg{background:#0088cc;}
