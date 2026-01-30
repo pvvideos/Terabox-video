@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>TeraBox Videos</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>TERABOX VIDEOS</header>
+<header>TeraBox Videos</header>
 
 <div class="grid" id="posts"></div>
 
-<script src="script.js"></script>
+<script>
+fetch('posts.json')
+.then(r=>r.json())
+.then(d=>{
+  let box=document.getElementById('posts');
+  d.forEach(p=>{
+    box.innerHTML+=`
+    <a class="card" href="post.html?id=${p.id}">
+      <img src="${p.image}">
+      <span>${p.title}</span>
+    </a>`;
+  });
+});
+</script>
 </body>
 </html>
