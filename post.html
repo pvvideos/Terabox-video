@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>TERABOX VIDEOS</header>
+
+<div class="post">
+  <img id="poster">
+  <h2 id="title"></h2>
+
+  <a id="tg" class="btn tg">Join Telegram</a>
+  <iframe id="video" allowfullscreen></iframe>
+</div>
+
+<script>
+const id = new URLSearchParams(location.search).get('id');
+fetch('posts.json').then(r=>r.json()).then(d=>{
+  const p=d.find(x=>x.id==id);
+  poster.src=p.image;
+  title.innerText=p.title;
+  tg.href=p.telegram;
+  video.src=p.video;
+});
+</script>
+
+</body>
+</html>
