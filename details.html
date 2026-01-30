@@ -8,20 +8,19 @@
 
 <div id="details"></div>
 
-<script src="data.js"></script>
 <script>
 const id = new URLSearchParams(window.location.search).get("id");
 const movie = posters.find(p => p.id == id);
 
 document.getElementById("details").innerHTML = `
-  <img src="${movie.image}" style="width:100%">
+  <img src="./${movie.image}" style="width:100%">
   <h2>${movie.title}</h2>
   <p>${movie.description}</p>
 
   <h3>👇 Video play on Terabox app 👇</h3>
   <a href="${movie.terabox}">PLAY VIDEO</a>
 
-  <h3>👇 Join Telegram channel for unlimited video 👇</h3>
+  <h3>👇 Join Telegram channel 👇</h3>
   <a href="${movie.telegram}">JOIN TELEGRAM</a>
 `;
 </script>
