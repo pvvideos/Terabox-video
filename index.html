@@ -1,48 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Home</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<meta charset="UTF-8">
+<title>TeraBox Video</title>
 
-<header class="top">
-  <img src="ChatGPT Image Jan 30, 2026, 03_14_52 PM.png" style="height:40px;">
- class="logo">
-</header>
-
-<div class="search-box">
-  <input type="text" id="search" placeholder="Search videos...">
-</div>
-
-<div class="grid" id="posterGrid"></div>
-
-<script src="data.js"></script>
-<script>
-const grid = document.getElementById("posterGrid");
-const search = document.getElementById("search");
-
-function render(list){
-  grid.innerHTML = "";
-  list.forEach(p => {
-    grid.innerHTML += `
-      <a href="post.html?id=${p.id}" class="poster">
-        <div class="frame">
-          <img src="${p.image}">
-        </div>
-        <p>${p.title}</p>
-      </a>
-    `;
-  });
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#fff;
 }
 
-render(posters);
+/* TOP BAR */
+.top{
+  text-align:center;
+  padding:10px;
+  border-bottom:1px solid #ddd;
+}
 
-search.addEventListener("input", () => {
-  const v = search.value.toLowerCase();
-  render(posters.filter(p => p.title.toLowerCase().includes(v)));
-});
-</script>
+/* LOGO */
+.top img{
+  height:45px;
+}
 
-</body>
-</html>
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  padding:8px;
+}
+
+/* POSTER */
+.poster{
+  border:1px solid #ccc;
+  text-align:center;
+}
+
+.poster img{
+  width:100%;
+  aspect-ratio:2/3;
+  object-fit:cover;
+}
+
+.poster p{
+  font-size:15px;
+  font-weight:700;
+  margin:5px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGO (DIRECT FILE NAME) -->
+<div class="top">
+  <img src="ChatGPT Image Jan 30, 2026, 03_14_52 PM.png">
+</div>
+
+<!-- TEST POSTERS -->
+<div class="grid">
+
+  <div class="poster">
+    <img src="ChatGPT Image Jan 30, 2026, 03_14_52 PM.png">
+    <p>Test Video 1</p>
+  </div>
+
+  <div class="poster">
+    <img src="ChatGPT Image Jan 30, 2026, 03_14_52 PM.png">
+    <p>Test Video 2</p>
+  </div>
+
+  <div class="poster">
+    <img src="ChatGPT Image Jan 30, 2026, 03_14_52 PM.png">
+    <p>Test Vi
