@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Details</title>
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -14,18 +13,17 @@ const params = new URLSearchParams(window.location.search);
 const id = parseInt(params.get("id"));
 const movie = posters.find(p => p.id === id);
 
-// more videos = main page style
-const more = posters.slice(0, 20);
+let more = posters.slice(0, 20); // main page jaisa
 
 document.getElementById("content").innerHTML = `
   <div class="detail-title">${movie.title}</div>
 
-  <div class="frame" style="margin:12px;">
+  <div class="frame" style="margin:10px;">
     <img src="${movie.image}">
   </div>
 
   <div class="detail-desc">
-    ${movie.desc}
+    ${movie.desc || "Full movie details will be updated here."}
   </div>
 
   <div class="click-text">👇 Click to watch 👇</div>
