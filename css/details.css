@@ -1,1 +1,43 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+}
+
+.details-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 15px;
+}
+
+.poster img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-play { background: #000; }
+.btn-telegram { background: #0088cc; }
+
+.more-videos {
+  margin-top: 30px;
+}
+
+.more-videos-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 12px;
+}
 
