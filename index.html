@@ -1,28 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TERABOX VIDEO HUB</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2 class="heading">TERABOX VIDEO HUB</h2>
+<header>TERABOX VIDEOS</header>
 
-<div id="poster-container"></div>
+<div class="grid" id="posts"></div>
 
-<script src="data.js"></script>
-<script>
-const container = document.getElementById("poster-container");
-
-posters.forEach(p => {
-  container.innerHTML += `
-    <a class="card" href="details.html?id=${p.id}">
-      <img src="${p.image}">
-      <h3>${p.title}</h3>
-    </a>
-  `;
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
