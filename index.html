@@ -10,21 +10,36 @@
   <img src="logo.png" class="logo">
 </header>
 
+<div class="search-box">
+  <input type="text" id="search" placeholder="Search videos...">
+</div>
+
 <div class="grid" id="posterGrid"></div>
 
 <script src="data.js"></script>
 <script>
 const grid = document.getElementById("posterGrid");
+const search = document.getElementById("search");
 
-posters.forEach(p => {
-  grid.innerHTML += `
-    <a href="post.html?id=${p.id}" class="poster">
-      <div class="frame">
-        <img src="${p.image}">
-      </div>
-      <p>${p.title}</p>
-    </a>
-  `;
+function render(list){
+  grid.innerHTML = "";
+  list.forEach(p => {
+    grid.innerHTML += `
+      <a href="post.html?id=${p.id}" class="poster">
+        <div class="frame">
+          <img src="${p.image}">
+        </div>
+        <p>${p.title}</p>
+      </a>
+    `;
+  });
+}
+
+render(posters);
+
+search.addEventListener("input", () => {
+  const v = search.value.toLowerCase();
+  render(posters.filter(p => p.title.toLowerCase().includes(v)));
 });
 </script>
 
