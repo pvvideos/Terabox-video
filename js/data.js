@@ -17,11 +17,11 @@ const posters = [
   },
   {
     id: 3,
-    title: "latest instagram viral couple video",
-    image: "images/poster1.jpg",
+    title: "fatima jatoi instagram viral video",
+    image: "ChatGPT Image Jan 30, 2026, 09_33_30 PM.png",
     description: "new viral couple reel full video",
-    terabox: "#",
-    telegram: "#"
+    terabox: "https://1024terabox.com/s/187vXBKbj8zZKqaXdGsFK-A",
+    telegram: "https://earning-boot-provider-04.in/movies-here"
   }
 ];
 
