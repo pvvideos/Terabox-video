@@ -10,30 +10,61 @@
 <header>TeraBox Videos</header>
 
 <div class="post">
+
+  <!-- Poster -->
   <img id="img">
   <h2 id="title"></h2>
 
-  <a id="tera" class="btn tera">▶ Play on Terabox App – Full Video</a>
+  <!-- TERABOX TEXT BOX -->
+  <div class="info-box">
+    👇 PLAY ON TERABOX APP – FULL VIDEO 👇
+  </div>
 
-  <a id="tg" class="btn tg">📢 Telegram Channel Join</a>
-  <p class="tgtext">Join Telegram Channel for unlimited desi viral 🥵🎥</p>
+  <p class="subinfo">
+    click and download terabox app – login – save and watch video 😍
+  </p>
 
+  <a id="tera" class="btn tera">
+    ▶ Play on Terabox App – Full Video
+  </a>
+
+  <!-- TELEGRAM TEXT BOX -->
+  <div class="info-box">
+    Join Telegram Channel for unlimited desi viral video 🥵
+  </div>
+
+  <a id="tg" class="btn tg">
+    📢 Telegram Channel Join
+  </a>
+
+  <!-- HOW TO WATCH -->
+  <h3>How to Watch</h3>
+
+  <div class="video-box">
+    <iframe 
+      src="https://www.youtube.com/embed/lwt7EuRJ-1Q"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- RELATED -->
   <h3>Related Videos</h3>
   <div class="grid" id="related"></div>
+
 </div>
 
 <script>
-const q=new URLSearchParams(location.search);
-const id=q.get('id');
+const id=new URLSearchParams(location.search).get('id');
 
 fetch('posts.json')
 .then(r=>r.json())
 .then(d=>{
-  let p=d.find(x=>x.id==id);
+  const p=d.find(x=>x.id==id);
   img.src=p.image;
   title.innerText=p.title;
   tera.href=p.video;
-  tg.href="https://t.me/YOUR_CHANNEL"; // 👈 telegram link
+  tg.href="https://t.me/YOUR_CHANNEL";
 
   d.filter(x=>x.id!=id).slice(0,20).forEach(r=>{
     related.innerHTML+=`
@@ -44,5 +75,6 @@ fetch('posts.json')
   });
 });
 </script>
+
 </body>
 </html>
