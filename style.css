@@ -1,12 +1,25 @@
-body{margin:0;font-family:Arial;background:#f2f2f2}
+/* ===== BASIC RESET ===== */
+*{
+  box-sizing:border-box;
+}
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f2f2f2;
+}
+
+/* ===== HEADER / LOGO ===== */
 header{
   background:#16a085;
   color:#fff;
   text-align:center;
-  padding:12px;
-  font-size:20px;
+  padding:14px;
+  font-size:22px;
+  font-weight:900;   /* extra bold logo */
+  letter-spacing:1px;
 }
 
+/* ===== GRID (MAIN + RELATED) ===== */
 .grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -14,28 +27,36 @@ header{
   padding:10px;
 }
 
+/* ===== CARD (POSTER BOX) ===== */
 .card{
   background:#fff;
   border-radius:6px;
   overflow:hidden;
   text-decoration:none;
   color:#000;
+  box-shadow:0 2px 5px rgba(0,0,0,0.15);
 }
 
+/* ===== POSTER IMAGE (NO CROP, 4:3 FIXED) ===== */
 .card img,
 .post img{
   width:100%;
-  aspect-ratio:4/3;
-  object-fit:cover;
+  aspect-ratio:4/3;     /* SAME FRAME FOR ALL */
+  object-fit:contain;   /* 🔥 NO CROP */
+  background:#000;      /* side black if needed */
+  display:block;
 }
 
+/* ===== CARD TITLE ===== */
 .card span{
   display:block;
   padding:6px;
   font-size:13px;
   text-align:center;
+  font-weight:600;
 }
 
+/* ===== DETAILS PAGE ===== */
 .post{
   background:#fff;
   margin:10px;
@@ -43,22 +64,42 @@ header{
   border-radius:6px;
 }
 
+.post h2{
+  font-size:18px;
+  margin:8px 0;
+}
+
+/* ===== BUTTONS ===== */
 .btn{
   display:block;
   margin:8px 0;
-  padding:10px;
+  padding:12px;
   text-align:center;
   color:#fff;
   text-decoration:none;
-  border-radius:20px;
-  font-weight:bold;
+  border-radius:25px;
+  font-weight:700;
+  font-size:14px;
 }
 
-.tera{background:#e53935}
-.tg{background:#0088cc}
+.tera{
+  background:#e53935;
+}
 
+.tg{
+  background:#0088cc;
+}
+
+/* ===== TELEGRAM TEXT ===== */
 .tgtext{
-  font-size:13px;
   text-align:center;
+  font-size:13px;
   color:#555;
+  margin-bottom:10px;
+}
+
+/* ===== SECTION TITLE ===== */
+h3{
+  margin:10px;
+  font-size:16px;
 }
