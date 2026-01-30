@@ -17,26 +17,10 @@ const posters = [
   },
   {
     id: 3,
-    title: "Third viral post demo",
+    title: "fatima jatoi viral Instagram most viral video hd ",
     image: "ChatGPT Image Jan 30, 2026, 09_33_30 PM.png",
-    description: "Third post test",
+    description: "fatima jatoi Pakistani viral Instagram video hd",
     terabox: "https://1024terabox.com/s/187vXBKbj8zZKqaXdGsFK-A",
     telegram: "https://earning-boot-provider-04.in/movies-here"
   },
-  {
-    id: 4,
-    title: "Third viral post demo",
-    image: "ChatGPT Image Jan 30, 2026, 09_33_30 PM.png",
-    description: "Third post test",
-    terabox: "https://terabox-link-3",
-    telegram: "https://telegram-link-3"
-  },
-  {
-    id: 5,
-    title: "Third viral post demo",
-    image: "ChatGPT Image Jan 30, 2026, 09_33_30 PM.png",
-    description: "Third post test",
-    terabox: "https://terabox-link-3",
-    telegram: "https://telegram-link-3"
-  }
 ];
