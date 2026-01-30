@@ -13,20 +13,20 @@ body {
 }
 
 .logo {
-  height:45px;
+  height:42px;
 }
 
-/* GRID */
+/* GRID – 6 posters per screen (mobile) */
 .grid {
   display:grid;
   grid-template-columns: repeat(2, 1fr);
-  gap:12px;
-  padding:12px;
+  gap:10px;
+  padding:10px;
 }
 
 /* POSTER CARD */
 .poster {
-  border:1px solid #e5e5e5;
+  border:1px solid #e0e0e0;
   border-radius:8px;
   overflow:hidden;
   background:#fff;
@@ -35,41 +35,67 @@ body {
 }
 
 /* FIXED FRAME */
-.poster .frame {
+.frame {
   width:100%;
-  aspect-ratio: 2 / 3;   /* movie poster ratio */
-  overflow:hidden;
+  aspect-ratio: 2 / 3;
   background:#f2f2f2;
+  overflow:hidden;
 }
 
 .poster img {
   width:100%;
   height:100%;
-  object-fit:cover;   /* MAGIC LINE */
+  object-fit:cover;
 }
 
 /* TITLE */
 .poster p {
-  margin:6px;
+  margin:6px 4px;
   font-size:14px;
+  font-weight:bold;
   text-align:center;
 }
 
-/* BUTTON */
+/* DETAIL PAGE */
+.detail-title {
+  font-size:18px;
+  font-weight:bold;
+  padding:10px;
+}
+
+.detail-desc {
+  padding:0 10px;
+  font-size:14px;
+  line-height:1.4;
+}
+
+/* BIG BUTTONS */
 .btn {
   display:block;
   background:#e50914;
   color:white;
-  padding:12px;
+  padding:14px;
   margin:10px;
   text-align:center;
   text-decoration:none;
-  border-radius:6px;
+  border-radius:8px;
+  font-size:16px;
+  font-weight:bold;
 }
 
-/* PAGINATION */
-.nav {
-  display:flex;
-  justify-content:space-between;
-  padding:12px;
+/* CLICK TEXT */
+.click-text {
+  text-align:center;
+  font-weight:bold;
+  font-size:15px;
+  margin-top:5px;
 }
+
+/* SECTION TITLE */
+.section-title {
+  padding:10px;
+  font-size:16px;
+  font-weight:bold;
+  border-top:1px solid #ddd;
+}
+
