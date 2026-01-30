@@ -14,5 +14,13 @@ const posters = [
     description: "Instagram most viral video",
     terabox: "https://teraboxurl.com/s/12LEPgspYBPW8cZ8_os81xg",
     telegram: "https://earning-boot-provider-04.in/movies-here"
+  },
+  {
+    id: 3,
+    title: "fatima jatoi Pakistani viral video full hd",
+    image: "images/ChatGPT Image Jan 30, 2026, 09_33_30 PM.png",
+    description: "fatima jatoi Pakistani viral video full hd",
+    terabox: "https://1024terabox.com/s/187vXBKbj8zZKqaXdGsFK-A",
+    telegram: "https://earning-boot-provider-04.in/movies-here"
   }
 ];
