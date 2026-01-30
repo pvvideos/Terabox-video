@@ -1,30 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Watch Video</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>TERABOX VIDEOS</header>
+<header>TeraBox Videos</header>
 
 <div class="post">
-  <img id="poster">
+  <img id="img">
   <h2 id="title"></h2>
 
-  <a id="tg" class="btn tg">Join Telegram</a>
-  <iframe id="video" allowfullscreen></iframe>
+  <a id="tera" class="btn tera">▶ Play on Terabox App – Full Video</a>
+
+  <a id="tg" class="btn tg">📢 Telegram Channel Join</a>
+  <p class="tgtext">Join Telegram Channel for unlimited desi viral 🥵🎥</p>
+
+  <h3>Related Videos</h3>
+  <div class="grid" id="related"></div>
 </div>
 
 <script>
-const id = new URLSearchParams(location.search).get('id');
-fetch('posts.json').then(r=>r.json()).then(d=>{
-  const p=d.find(x=>x.id==id);
-  poster.src=p.image;
+const q=new URLSearchParams(location.search);
+const id=q.get('id');
+
+fetch('posts.json')
+.then(r=>r.json())
+.then(d=>{
+  let p=d.find(x=>x.id==id);
+  img.src=p.image;
   title.innerText=p.title;
-  tg.href=p.telegram;
-  video.src=p.video;
+  tera.href=p.video;
+  tg.href="https://t.me/YOUR_CHANNEL"; // 👈 telegram link
+
+  d.filter(x=>x.id!=id).slice(0,20).forEach(r=>{
+    related.innerHTML+=`
+    <a class="card" href="post.html?id=${r.id}">
+      <img src="${r.image}">
+      <span>${r.title}</span>
+    </a>`;
+  });
 });
 </script>
-
 </body>
 </html>
