@@ -1,38 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Details</title>
+  <meta charset="UTF-8">
+  <title>Video Details</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="details"></div>
+<h1 style="text-align:center;">TERABOX VIDEO HUB</h1>
+
+<div id="details" style="padding:10px;"></div>
 
 <script src="data.js"></script>
 <script>
-const id = new URLSearchParams(window.location.search).get("id");
-const movie = posters.find(p => p.id == id);
+  // URL se id lena
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
 
-if (!movie) {
-  document.getElementById("details").innerHTML = "<h2>Data not found</h2>";
-} else {
-  document.getElementById("details").innerHTML = `
-    <img src="${movie.image}" style="width:100%; border-radius:10px;">
+  // Data me se movie dhundhna
+  const movie = posters.find(p => p.id == id);
 
-    <h2>${movie.title}</h2>
-    <p>${movie.description}</p>
+  if (!movie) {
+    document.getElementById("details").innerHTML = "<h2>Video not found</h2>";
+  } else {
+    document.getElementById("details").innerHTML = `
+      <img src="${movie.image}" style="width:100%;border-radius:8px;">
 
-    <h3>👇 Video play on Terabox app 👇</h3>
-    <a href="${movie.terabox}" target="_blank">
-      <button>PLAY VIDEO</button>
-    </a>
+      <h2 style="margin-top:10px;">${movie.title}</h2>
 
-    <h3>👇 Join Telegram channel for unlimited video 👇</h3>
-    <a href="${movie.telegram}" target="_blank">
-      <button>JOIN TELEGRAM</button>
-    </a>
-  `;
-}
+      <p>${movie.description}</p>
+
+      <h3 style="text-align:center;margin-top:25px;">
+        👇 Video play on Terabox app 👇
+      </h3>
+
+      <div style="text-align:center;">
+        <a href="${movie.terabox}" target="_blank"
+           style="display:inline-block;padding:12px 20px;
+           background:#000;color:#fff;text-decoration:none;
+           border-radius:6px;font-weight:bold;">
+           ▶ PLAY VIDEO
+        </a>
+      </div>
+
+      <h3 style="text-align:center;margin-top:30px;">
+        👇 Join Telegram channel for unlimited video 👇
+      </h3>
+
+      <div style="text-align:center;">
+        <a href="${movie.telegram}" target="_blank"
+           style="display:inline-block;padding:12px 20px;
+           background:#0088cc;color:#fff;text-decoration:none;
+           border-radius:6px;font-weight:bold;">
+           📢 JOIN TELEGRAM
+        </a>
+      </div>
+    `;
+  }
 </script>
 
 </body>
