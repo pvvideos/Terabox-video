@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Video Site</title>
+  <title>Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>My Video Site</h2>
+<h2 style="text-align:center">My Video Site</h2>
 
-<a href="post1.html">
-  <img src="poster1.jpg" width="150">
-  <p>Movie 1</p>
-</a>
+<div class="grid" id="posterGrid"></div>
+
+<script src="data.js"></script>
+<script>
+  const grid = document.getElementById("posterGrid");
+
+  posters.slice(0,15).forEach(p => {
+    grid.innerHTML += `
+      <a href="post.html?id=${p.id}" class="poster">
+        <img src="${p.image}">
+        <p>${p.title}</p>
+      </a>
+    `;
+  });
+</script>
 
 </body>
 </html>
