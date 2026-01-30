@@ -5,29 +5,48 @@ body {
   color:#000;
 }
 
-/* HEADER */
+/* TOP BAR */
 .top {
-  padding:10px;
-  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:56px;
   border-bottom:1px solid #ddd;
+  background:#fff;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
 .logo {
-  height:42px;
+  height:38px;
 }
 
-/* GRID – 6 posters per screen (mobile) */
+/* SEARCH BAR */
+.search-box {
+  padding:8px;
+}
+
+.search-box input {
+  width:100%;
+  padding:10px;
+  font-size:16px;
+  border:1px solid #ccc;
+  border-radius:6px;
+}
+
+/* GRID – 3 posters per row (mobile) */
 .grid {
   display:grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap:10px;
-  padding:10px;
+  grid-template-columns: repeat(3, 1fr);
+  gap:8px;
+  padding:8px;
 }
 
 /* POSTER CARD */
 .poster {
   border:1px solid #e0e0e0;
-  border-radius:8px;
+  border-radius:6px;
   overflow:hidden;
   background:#fff;
   text-decoration:none;
@@ -48,25 +67,26 @@ body {
   object-fit:cover;
 }
 
-/* TITLE */
+/* POSTER TITLE (BIG & BOLD) */
 .poster p {
   margin:6px 4px;
-  font-size:14px;
-  font-weight:bold;
+  font-size:15px;
+  font-weight:700;
   text-align:center;
 }
 
 /* DETAIL PAGE */
 .detail-title {
-  font-size:18px;
-  font-weight:bold;
+  font-size:20px;
+  font-weight:800;
   padding:10px;
 }
 
 .detail-desc {
   padding:0 10px;
-  font-size:14px;
-  line-height:1.4;
+  font-size:16px;
+  line-height:1.5;
+  font-weight:500;
 }
 
 /* BIG BUTTONS */
@@ -74,28 +94,27 @@ body {
   display:block;
   background:#e50914;
   color:white;
-  padding:14px;
+  padding:16px;
   margin:10px;
   text-align:center;
   text-decoration:none;
   border-radius:8px;
-  font-size:16px;
-  font-weight:bold;
+  font-size:17px;
+  font-weight:800;
 }
 
 /* CLICK TEXT */
 .click-text {
   text-align:center;
-  font-weight:bold;
-  font-size:15px;
-  margin-top:5px;
+  font-weight:800;
+  font-size:16px;
+  margin:8px 0;
 }
 
 /* SECTION TITLE */
 .section-title {
   padding:10px;
-  font-size:16px;
-  font-weight:bold;
+  font-size:18px;
+  font-weight:800;
   border-top:1px solid #ddd;
 }
-
