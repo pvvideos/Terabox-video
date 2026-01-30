@@ -1,4 +1,4 @@
-const posters = [
+var posters = [
   {
     id: 1,
     title: "Test Movie One",
