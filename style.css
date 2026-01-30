@@ -1,32 +1,75 @@
 body {
-  background:#111;
-  color:white;
-  font-family:Arial;
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#ffffff;
+  color:#000;
 }
 
+/* HEADER */
+.top {
+  padding:10px;
+  text-align:center;
+  border-bottom:1px solid #ddd;
+}
+
+.logo {
+  height:45px;
+}
+
+/* GRID */
 .grid {
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  padding:10px;
+  grid-template-columns: repeat(2, 1fr);
+  gap:12px;
+  padding:12px;
+}
+
+/* POSTER CARD */
+.poster {
+  border:1px solid #e5e5e5;
+  border-radius:8px;
+  overflow:hidden;
+  background:#fff;
+  text-decoration:none;
+  color:#000;
+}
+
+/* FIXED FRAME */
+.poster .frame {
+  width:100%;
+  aspect-ratio: 2 / 3;   /* movie poster ratio */
+  overflow:hidden;
+  background:#f2f2f2;
 }
 
 .poster img {
   width:100%;
-  border-radius:8px;
+  height:100%;
+  object-fit:cover;   /* MAGIC LINE */
 }
 
+/* TITLE */
 .poster p {
+  margin:6px;
+  font-size:14px;
   text-align:center;
 }
 
+/* BUTTON */
 .btn {
   display:block;
-  background:red;
+  background:#e50914;
+  color:white;
   padding:12px;
   margin:10px;
   text-align:center;
-  color:white;
   text-decoration:none;
   border-radius:6px;
+}
+
+/* PAGINATION */
+.nav {
+  display:flex;
+  justify-content:space-between;
+  padding:12px;
 }
