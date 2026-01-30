@@ -6,19 +6,23 @@
 </head>
 <body>
 
-<h2 class="title">TERABOX VIDEO HUB</h2>
+<h2 class="heading">TERABOX VIDEO HUB</h2>
 
-<div class="grid">
-  <a href="details.html">
-    <img src="images/p1.jpg">
-  </a>
-  <a href="details.html">
-    <img src="images/p2.jpg">
-  </a>
-  <a href="details.html">
-    <img src="images/p3.jpg">
-  </a>
-</div>
+<div id="poster-container"></div>
+
+<script src="data.js"></script>
+<script>
+const container = document.getElementById("poster-container");
+
+posters.forEach(p => {
+  container.innerHTML += `
+    <a class="card" href="details.html?id=${p.id}">
+      <img src="${p.image}">
+      <h3>${p.title}</h3>
+    </a>
+  `;
+});
+</script>
 
 </body>
 </html>
