@@ -10,7 +10,7 @@ const posters = [
   {
     id: 2,
     title: "19 minute 34 second viral video full HD",
-    image: "images/poster2.jpg",
+    image: "images/IMG_20260130_171412_225.jpg",
     description: "Full HD viral couple video",
     terabox: "https://terabox-link-2",
     telegram: "https://telegram-link-2"
