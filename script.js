@@ -1,21 +1,16 @@
 alert("JS WORKING");
 
-alert("posters type: " + typeof posters);
-
 const container = document.getElementById("poster-container");
 
-if (!container) {
-  alert("container missing");
-}
+posters.forEach(item => {
+  const box = document.createElement("a");
+  box.href = "details.html?id=" + item.id;
+  box.classList.add("poster");
 
-posters.forEach(function (item) {
-  const a = document.createElement("a");
-  a.href = "details.html?id=" + item.id;
-  a.className = "poster";
+  box.innerHTML = `
+    <img src="./${item.image}" alt="poster">
+    <h3>${item.title}</h3>
+  `;
 
-  a.innerHTML =
-    '<img src="' + item.image + '">' +
-    '<h3>' + item.title + '</h3>';
-
-  container.appendChild(a);
+  container.appendChild(box);
 });
