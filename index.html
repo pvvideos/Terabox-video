@@ -1,115 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>TeraBox Video</title>
-
-<style>
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#ffffff;
-}
-
-/* TOP LOGO BAR */
-.top{
-  text-align:center;
-  padding:10px;
-  border-bottom:1px solid #ddd;
-}
-
-.top img{
-  height:40px;
-}
-
-/* SEARCH */
-.search-box{
-  padding:10px;
-}
-
-.search-box input{
-  width:100%;
-  padding:12px;
-  font-size:16px;
-  border:1px solid #ccc;
-  border-radius:6px;
-}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:8px;
-  padding:8px;
-}
-
-/* POSTER */
-.poster{
-  border:1px solid #ddd;
-  background:#fff;
-}
-
-.poster img{
-  width:100%;
-  aspect-ratio:2/3;
-  object-fit:cover;
-}
-
-.poster p{
-  margin:6px 4px;
-  font-size:15px;
-  font-weight:700;
-  text-align:center;
-}
-</style>
+<script src="data.js"></script>
 </head>
 
-<body>
+<body style="margin:0;font-family:Arial;background:#fff;">
 
 <!-- LOGO -->
-<div class="top">
-  <img src="ChatGPT Image Jan 30, 2026, 03_14_52 PM.png">
+<div style="text-align:center;padding:12px;border-bottom:1px solid #ddd;">
+  <img src="ChatGPT Image Jan 30, 2026, 03_14_52 PM.png" style="max-width:220px;width:100%;">
 </div>
 
 <!-- SEARCH -->
-<div class="search-box">
-  <input type="text" placeholder="Search videos...">
+<div style="padding:10px;">
+  <input type="text" placeholder="Search videos..."
+    style="width:100%;padding:12px;font-size:16px;
+    border:1px solid #ccc;border-radius:6px;">
 </div>
 
 <!-- POSTERS -->
-<div class="grid">
-
-  <div class="poster">
-    <img src="ChatGPT Image Jan 30, 2026, 03_14_52 PM.png">
-    <p>Video Title 1</p>
-  </div>
-
-  <div class="poster">
-    <img src="ChatGPT Image Jan 30, 2026, 03_14_52 PM.png">
-    <p>Video Title 2</p>
-  </div>
-
-  <div class="poster">
-    <img src="ChatGPT Image Jan 30, 2026, 03_14_52 PM.png">
-    <p>Video Title 3</p>
-  </div>
-
-  <div class="poster">
-    <img src="ChatGPT Image Jan 30, 2026, 03_14_52 PM.png">
-    <p>Video Title 4</p>
-  </div>
-
-  <div class="poster">
-    <img src="ChatGPT Image Jan 30, 2026, 03_14_52 PM.png">
-    <p>Video Title 5</p>
-  </div>
-
-  <div class="poster">
-    <img src="ChatGPT Image Jan 30, 2026, 03_14_52 PM.png">
-    <p>Video Title 6</p>
-  </div>
-
+<div id="posterBox" style="
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  padding:8px;">
 </div>
+
+<script>
+const box = document.getElementById("posterBox");
+
+videos.forEach(v => {
+  box.innerHTML += 
+    <a href="${v.link}" style="text-decoration:none;color:black;">
+      <div style="border:1px solid #ccc;">
+        <img src="${v.image}"
+          style="width:100%;aspect-ratio:2/3;object-fit:cover;">
+        <p style="font-weight:bold;text-align:center;font-size:16px;">
+          ${v.title}
+        </p>
+      </div>
+    </a>
+  ;
+});
+</script>
 
 </body>
 </html>
