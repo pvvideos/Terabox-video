@@ -11,13 +11,14 @@
 <script>
   const params = new URLSearchParams(window.location.search);
   const id = parseInt(params.get("id"));
-
   const movie = posters.find(p => p.id === id);
 
   document.getElementById("content").innerHTML = `
-    <h2>${movie.title}</h2>
-    <img src="${movie.image}" style="width:100%">
-    <br><br>
+    <h2 style="padding:10px;">${movie.title}</h2>
+
+    <div class="frame">
+      <img src="${movie.image}">
+    </div>
 
     <a href="${movie.terabox}" class="btn">
       Watch on Terabox (Paid)
