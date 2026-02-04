@@ -1,35 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>TeraBox Videos</title>
 <link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
 
-<header>TeraBox Videos</header>
+<header class="site-header">
+  <h1>TeraBox Videos</h1>
+</header>
 
 <div class="grid" id="posts"></div>
 
 <script>
 fetch('posts.json')
-.then(r=>r.json())
-.then(d=>{
-  let box=document.getElementById('posts');
-  d.forEach(p=>{
-    box.innerHTML+=`
-    <a class="card" href="post.html?id=${p.id}">
-      <img src="${p.image}">
-      <span>${p.title}</span>
-    </a>`;
+.then(response => response.json())
+.then(data => {
+  const box = document.getElementById('posts');
+
+  data.forEach(p => {
+    box.innerHTML += `
+      <a class="card" href="post.html?id=${p.id}">
+        <div class="img-box">
+          <img src="${p.image}" alt="${p.title}">
+        </div>
+        <span class="title">${p.title}</span>
+      </a>
+    `;
   });
+})
+.catch(err => {
+  console.error("Posts load error:", err);
 });
 </script>
-</body>
-</html>
-<footer>
+
+<footer class="site-footer">
   <a href="about.html">About</a> |
   <a href="privacy.html">Privacy</a> |
   <a href="contact.html">Contact</a> |
   <a href="disclaimer.html">Disclaimer</a>
 </footer>
+
+</body>
+</html>
